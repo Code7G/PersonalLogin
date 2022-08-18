@@ -1,4 +1,5 @@
 from random import randint
+from re import A
 import time
 
 
@@ -8,20 +9,18 @@ def password(ps):
     user_password = input('Enter your password here: ')
     if user_password == ps:
         return 'login_complete'
-    else:
+    print('Incorect password!')
+    while tries < 4:
+        user_password2 = input('Enter password: ')
+        if user_password2 == ps:
+            return 'login_complete'
         print('Incorect password!')
-        while tries < 4:
-            user_password2 = input('Enter password: ')
-            if user_password2 == ps:
-                return 'login_complete'
-            else:
-                print('Incorect password!')
-                tries += 1
-            if tries == 4:
-                return 'login_failed'
+        tries += 1
+        if tries == 4:
+            return 'login_failed'
 
 
-# improved version of Juni's countdown(Juni Learning (YouTube)) 
+# improved version of Juni's countdown(Juni Learning (YouTube))
 def countdown(t):
     while t:
         mins = t // 60
@@ -58,7 +57,7 @@ elif login == 'login_failed':
     print('You can try again after:')
 
 # set your own countdown duration by changing the value of t in secundes
-    t = 10
+    t = 300
     countdown(t)
 #                                                  # 2
 # after this you can add as many tries as you want by copying the code from #1 to #2 without the # line
