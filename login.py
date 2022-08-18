@@ -57,7 +57,7 @@ elif login == 'login_failed':
     print('You can try again after:')
 
 # set your own countdown duration by changing the value of t in secundes
-    t = 300
+    t = 180
     countdown(t)
 #                                                  # 2
 # after this you can add as many tries as you want by copying the code from #1 to #2 without the # line
