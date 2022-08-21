@@ -1,5 +1,4 @@
-from random import randint
-from re import A
+from random import choice
 import time
 
 
@@ -38,13 +37,7 @@ name = 'Coder'
 pas = '7G'
 
 # you can add your own funny messages
-funny_message = {
-    1: 'wow',
-    2: 'ok',
-    3: 'nice try',
-    4: 'so close',
-    5: 'really?'
-}
+funny_message = ['wow', 'ok', 'nice try', 'so close', 'really?']
 # 1
 login = (password(ps=pas))
 if login == 'login_complete':
@@ -52,7 +45,7 @@ if login == 'login_complete':
     print(f'Welcome back {name}!')
 elif login == 'login_failed':
     print('Login Failed!')
-    print(funny_message.get(randint(1, 5)))
+    print(choice(funny_message))
     time.sleep(3)
     print('You can try again after:')
 
@@ -67,6 +60,6 @@ elif login == 'login_failed':
         print(f'Welcome back {name}!')
     elif login == 'login_failed':
         print('Login Failed!')
-        print(funny_message.get(randint(1, 5)))
+        print(choice(funny_message))
         time.sleep(2)
         print('No more tries!')
