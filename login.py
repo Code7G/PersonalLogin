@@ -1,5 +1,5 @@
 from random import choice
-import time
+from time import sleep
 
 
 # ps and pas are short terms for password
@@ -26,7 +26,7 @@ def countdown(t):
         secs = t % 60
         timer = '{:02d}:{:02d}'.format(mins, secs)
         print(timer, end="\r")
-        time.sleep(1)
+        sleep(1)
         t -= 1
 
 
@@ -46,7 +46,7 @@ if login == 'login_complete':
 elif login == 'login_failed':
     print('Login Failed!')
     print(choice(funny_message))
-    time.sleep(3)
+    sleep(2)
     print('You can try again after:')
 
 # set your own countdown duration by changing the value of t in secundes
@@ -61,5 +61,5 @@ elif login == 'login_failed':
     elif login == 'login_failed':
         print('Login Failed!')
         print(choice(funny_message))
-        time.sleep(2)
+        sleep(2)
         print('No more tries!')
